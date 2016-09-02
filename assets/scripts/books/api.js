@@ -9,7 +9,10 @@ const index = function () {
   });
 };
 
-const show = function (id) {
+const show = function (data) {
+
+  let id = data.book.id;
+
   return $.ajax({
     url: app.host + '/books/' + id,
     method: 'GET',
@@ -29,6 +32,5 @@ const destroy = function (data) {
 module.exports = {
   index,
   show,
-  create,
   destroy,
 };
