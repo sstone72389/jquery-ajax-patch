@@ -13,7 +13,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 const onGetBooks = function (event) {
   event.preventDefault();
   console.log("Event target in get books is " + event.target.toString());
-  let bookId = $(event.target).find('[name="book[id]"]').val();
+  // let bookId = $(event.target).find('[name="book[id]"]').val();
 
   let data = getFormFields(event.target);
 
