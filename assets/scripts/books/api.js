@@ -16,14 +16,6 @@ const show = function (id) {
   });
 };
 
-const create = function (data) {
-  return $.ajax({
-    url: app.host + '/books/',
-    method: 'POST',
-    data: data
-  });
-};
-
 const destroy = function (data) {
 
   let id = data.book.id;
