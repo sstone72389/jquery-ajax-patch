@@ -1,7 +1,9 @@
 'use strict';
 
-const libraryApi = require('../library-api');
+const api = require('./api');
 const ui = require('./ui');
+
+const getFormFields = require('../../../lib/get-form-fields');
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -13,12 +15,14 @@ const onGetBooks = function (event) {
   console.log("Event target in get books is " + event.target.toString());
   let bookId = $(event.target).find('[name="book[id]"]').val();
 
-  if (bookId.length === 0) {
-    libraryApi.index()
+  let data = getFormFields(event.target);
+
+  if (data.book.id.length === 0) {
+    api.index()
       .done(ui.onSuccess)
       .fail(ui.onError);
   } else {
-    libraryApi.show(event.target)
+    api.show(data)
       .done(ui.onSuccess)
       .fail(ui.onError);
   }
@@ -26,14 +30,20 @@ const onGetBooks = function (event) {
 
 const onCreateBook = function (event) {
   event.preventDefault();
-  libraryApi.create(event.target)
+
+  let data = getFormFields(event.target)
+
+  api.create(data)
     .done(ui.onSuccess)
     .fail(ui.onError);
 };
 
 const onDeleteBook = function (event) {
   event.preventDefault();
-  libraryApi.destroy(event.target)
+
+  let data = getFormFields(event.target);
+
+  api.destroy(data)
     .done(ui.onDelete)
     .fail(ui.onError);
 };
@@ -41,5 +51,5 @@ const onDeleteBook = function (event) {
 module.exports = {
   onGetBooks,
   onCreateBook,
-  onDeleteBook
+  onDeleteBook,
 };

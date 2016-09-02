@@ -16,16 +16,16 @@ const show = function (id) {
   });
 };
 
-const create = function (form) {
+const create = function (data) {
   return $.ajax({
     url: app.host + '/books/',
     method: 'POST',
-    data: getFormFields(form),
+    data: data
   });
 };
 
-const destroy = function (form) {
-  let data = getFormFields(form);
+const destroy = function (data) {
+
   let id = data.book.id;
 
   return $.ajax({
