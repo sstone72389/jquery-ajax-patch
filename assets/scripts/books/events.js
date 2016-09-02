@@ -28,16 +28,6 @@ const onGetBooks = function (event) {
   }
 };
 
-const onCreateBook = function (event) {
-  event.preventDefault();
-
-  let data = getFormFields(event.target)
-
-  api.create(data)
-    .done(ui.onSuccess)
-    .fail(ui.onError);
-};
-
 const onDeleteBook = function (event) {
   event.preventDefault();
 
@@ -50,6 +40,5 @@ const onDeleteBook = function (event) {
 
 module.exports = {
   onGetBooks,
-  onCreateBook,
   onDeleteBook,
 };
