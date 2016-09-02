@@ -17,12 +17,12 @@ const onError = function (response) {
   console.error(response);
 };
 
-const onDeleteSuccess = function () {
+const onDelete = function () {
   console.log('Book was successfully deleted.');
 };
 
 module.exports = {
   onSuccess,
   onError,
-  onDeleteSuccess
+  onDelete
 };
