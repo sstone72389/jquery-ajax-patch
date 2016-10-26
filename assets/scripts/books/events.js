@@ -24,6 +24,19 @@ const onGetBooks = function (event) {
 
 };
 
+const onDeleteBook = function(event){
+  event.preventDefault();
+  // let bookId = $('#delete-book-id').val();
+  // multiple ways to do everything.
+  // However prefer this way.
+
+  let data = getFormFields(event.target);
+  booksApi.destroy(data.book.id)
+    .then(booksUi.onDeleteSuccess)
+    .catch(booksUi.onError);
+};
+
 module.exports = {
   onGetBooks,
+  onDeleteBook,
 };
