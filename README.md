@@ -1,20 +1,17 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# jQuery AJAX GET Item
+# jQuery AJAX Patch
 
 ## Prerequisites
 
 -   [http-study](https://github.com/ga-wdi-boston/http-study)
 -   [json-study](https://github.com/ga-wdi-boston/json-study)
--   [Ajax Get Collection](https://github.com/ga-wdi-boston/jquery-ajax-get-collection)
 
 ## Objectives
 
-Make HTTP requests using `curl`, the browser address bar, and AJAX for:
+Make HTTP requests using `curl` and AJAX for:
 
--   A specific resource.
-
-Use response data in future requests
+-   Altering a specific resource.
 
 ## Preparation
 
@@ -29,47 +26,34 @@ We'll make requests of and receive responses from an HTTP server we'll set up
  together:
 
 1.  Open a new terminal (window or tab).
-1.  Change into `~/wdi/tmp`.
-1.  Fork and clone [library-api-guide](https://github.com/ga-wdi-boston/library-api-guide)
-and follow installation instructions listed there.
-1.  Once installed, checkout a `jquery-ajax` branch within `library-api`.
+1.  Change into `~/wdi/tmp/library-api`.
+1.  Run the HTTP server with `rails server`.
 
 We're now ready to make requests.
 
-### GET /books/:id
+### Curl single book demonstration
 
-Retrieve a book from the API
+We'll use curl to alter a book. Watch as I alter a script in my `curl/patch.sh`
+file and run it in my terminal.
 
-### Demo: Browser Single Book
+### Curl single book code along
 
-Entering `http://localhost:4741/books/1` into the chrome address bar.
+We'll use curl to alter a book. Code along as I alter a script to my `curl/patch.sh`
+file and run it in my terminal.
 
-### Code Along: Browser Single Book
+### Curl single book lab
 
-Entering `http://localhost:4741/books/<integer>` into the chrome address bar.
+Now write your own curl script in `curl/patch.sh`.  Alter a few books.
 
-### Demo: Curl Single Book
+### AJAX single book demo and lab
 
-We'll use curl to retrieve the one book at a time.
+We will use the same markup we wrote in the `jquery-ajax-post` lesson, if you
+do not have working code ask your neighbor to slack you theirs.
 
-### Code Along: Curl Single Book
-
-Let's write that curl command into a script.
-
-### Lab: AJAX Single Book
-
-Again, take a stepped approach:
-
-1.  Add a text input for a book id to the form in `index.html`.
-1.  Retrieve the value of the id, if any, in the submit handler.
-1.  Branch on that value in the submit handler.
-1.  Add a single book success and fail handler to `assets/scripts/ui.js`.
-1.  Add a single book retrieval method to `assets/scripts/library-api.js`.
-1.  Invoke the single book retrieval method from the submit handler passing the
- success and fail callbacks.
+We'll be going back and forth between watching me and doing it yourself.
 
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
 1.  All software code is licensed under GNU GPLv3. For commercial use or
-   alternative licensing, please contact legal@ga.co.
+    alternative licensing, please contact legal@ga.co.
