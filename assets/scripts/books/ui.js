@@ -1,7 +1,7 @@
 'use strict';
 
 const onSuccess = function (data) {
-  debugger;
+//  debugger;
   if (data.book) {
     console.log(data.book);
   } else {
