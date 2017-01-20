@@ -46,7 +46,7 @@ Now write your own curl script in `scripts/books/book-patch.sh`.  Alter a few bo
 
 ### AJAX single book demo and lab
 
-We will use the same markup we wrote in the `jquery-ajax-post` lesson, if you
+We will use the same markup we wrote in the `jquery-ajax` lessons, if you
 do not have working code ask your neighbor to slack you theirs.
 
 We'll be going back and forth between watching me and doing it yourself.
