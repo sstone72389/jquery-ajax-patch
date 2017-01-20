@@ -2,6 +2,9 @@
 
 const booksApi = require('./api.js');
 const booksUi = require('./ui.js');
+// attach getFormFields globally
+
+const getFormFields = require('expose?getFormFields!./lib/get-form-fields.js');
 
 // get in the habit of naming your handlers, it eases debugging.
 //
