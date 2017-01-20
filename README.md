@@ -33,17 +33,16 @@ We're now ready to make requests.
 
 ### Curl single book demonstration
 
-We'll use curl to alter a book. Watch as I alter a script in my `curl/patch.sh`
-file and run it in my terminal.
+I'll use curl to alter a single book.
 
 ### Curl single book code along
 
-We'll use curl to alter a book. Code along as I alter a script to my `curl/patch.sh`
+We'll use curl to alter a single book. Code along as I alter a script to my `scripts/books/book-patch.sh`
 file and run it in my terminal.
 
 ### Curl single book lab
 
-Now write your own curl script in `curl/patch.sh`.  Alter a few books.
+Now write your own curl script in `scripts/books/book-patch.sh`.  Alter a few books.
 
 ### AJAX single book demo and lab
 
