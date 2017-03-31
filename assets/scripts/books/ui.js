@@ -1,24 +1,20 @@
-'use strict';
+'use strict'
 
 const onSuccess = function (data) {
-//  debugger;
-  if (data.book) {
-    console.log(data.book);
+  if (!data) {
+    console.warn('Either you deleted something, or something went wrong.')
+  } else if (data.book) {
+    console.log(data.book)
   } else {
-    console.table(data.books);
+    console.table(data.books)
   }
-};
+}
 
 const onError = function (response) {
-  console.error(response);
-};
-
-const onDeleteSuccess = function () {
-  console.log('Book was successfully deleted.');
-};
+  console.error(response)
+}
 
 module.exports = {
   onSuccess,
-  onError,
-  onDeleteSuccess,
-};
+  onError
+}
