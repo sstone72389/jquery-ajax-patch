@@ -16,10 +16,11 @@ const show = function (id) {
   })
 }
 
-const patch = function (id) {
+const update = function (data) {
   return $.ajax({
-    url: app.host + '/books/' + id,
-    method: 'PATCH'
+    url: app.host + '/books/' + data.book.id,
+    method: 'PATCH',
+    data
   })
 }
 
@@ -33,5 +34,6 @@ const destroy = function (id) {
 module.exports = {
   index,
   show,
+  update,
   destroy
 }

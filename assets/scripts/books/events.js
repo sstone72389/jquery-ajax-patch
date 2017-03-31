@@ -32,11 +32,11 @@ const onGetBook = function (event) {
 
 const onUpdateBook = function (event) {
   event.preventDefault()
-  const book = getFormFields(event.target).book
+  const data = getFormFields(event.target)
 
-  if (book.id.length !== 0) {
-    booksApi.update(book.id)
-      .then(booksUi.onSuccess)
+  if (data.book.id.length !== 0) {
+    booksApi.update(data)
+      .then(booksUi.onUpdateSuccess)
       .catch(booksUi.onError)
   } else {
     console.log('Please provide a book id!')
@@ -45,12 +45,13 @@ const onUpdateBook = function (event) {
 
 const onDeleteBook = function (event) {
   event.preventDefault()
-  const book = getFormFields(event.target).book
+  const data = getFormFields(event.target)
+  const book = data.book
 
   if (book.id.length !== 0) {
     booksApi.destroy(book.id)
-    .then(booksUi.onSuccess)
-    .catch(booksUi.onError)
+      .then(booksUi.onSuccess)
+      .catch(booksUi.onError)
   } else {
     console.log('Please provide a book id!')
   }
