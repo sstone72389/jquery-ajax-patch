@@ -16,6 +16,13 @@ const show = function (id) {
   })
 }
 
+const patch = function (id) {
+  return $.ajax({
+    url: app.host + '/books/' + id,
+    method: 'PATCH'
+  })
+}
+
 const destroy = function (id) {
   return $.ajax({
     url: app.host + '/books/' + id,
