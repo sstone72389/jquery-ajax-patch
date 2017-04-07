@@ -40,9 +40,23 @@ const onDeleteBook = function (event) {
     console.log('Please provide a book id!')
   }
 }
+const onUpdateBook = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const book = data.book
+
+  if (book.id.length !== 0) {
+    booksApi.update(data)
+    .then(booksUi.onUpdateSuccess)
+    .catch(booksUi.onError)
+  } else {
+    console.log('Please provide a book id!')
+  }
+}
 
 module.exports = {
   onGetBooks,
   onGetBook,
-  onDeleteBook
+  onDeleteBook,
+  onUpdateBook
 }

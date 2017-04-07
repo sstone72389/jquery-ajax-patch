@@ -10,11 +10,15 @@ const onSuccess = function (data) {
   }
 }
 
+const onUpdateSuccess = function (data) {
+  console.log('You changed a title!!!')
+}
 const onError = function (response) {
   console.error(response)
 }
 
 module.exports = {
   onSuccess,
+  onUpdateSuccess,
   onError
 }

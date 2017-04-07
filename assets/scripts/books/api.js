@@ -23,8 +23,17 @@ const destroy = function (id) {
   })
 }
 
+const update = function (data) {
+  return $.ajax({
+    url: app.host + '/books/' + data.book.id,
+    method: 'PATCH',
+    data
+  })
+}
+
 module.exports = {
   index,
   show,
-  destroy
+  destroy,
+  update
 }
